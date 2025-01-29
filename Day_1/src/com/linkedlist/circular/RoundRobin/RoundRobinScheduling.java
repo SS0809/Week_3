@@ -15,20 +15,25 @@ package com.linkedlist.circular.RoundRobin;
 //Each process executes for a fixed time quantum, and then control moves to the next process in the circular list.
 //Maintain the current node as the process being executed, and after each round, update the list to simulate execution.
 
-public class Scheduling {
-    public Scheduling() {
-    }
-
+public class RoundRobinScheduling {
     public static void main(String[] args) {
-        LinkedList l1 = new LinkedList();
-        l1.insertEnd(456231,20,4);
-        l1.insertEnd(456232,21,5);
-        l1.insertEnd(456232,22,0);
-        // l1.insertSpecific(456232,22,0 ,3);
-//        l1.searchElement(4);
-//        l1.deleteElement("tsxabti4");
-        l1.printDetails();
+        CircularLinkedList cll = new CircularLinkedList();
 
-        
+        // Add processes
+        cll.addProcess(1, 10, 2);
+        cll.addProcess(2, 5, 1);
+        cll.addProcess(3, 8, 3);
+
+        // Display processes
+        cll.displayProcesses();
+
+        // Simulate Round Robin Scheduling with time quantum = 3
+        cll.simulateRoundRobin(3);
+
+        // Remove a process
+        cll.removeProcess(2);
+
+        // Display processes after removal
+        cll.displayProcesses();
     }
 }

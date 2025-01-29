@@ -1,12 +1,12 @@
 package com.linkedlist.circular.RoundRobin;
 // Each node will represent a process and contain Process ID, Burst Time, and Priority.
-public class TaskNode {
+public class Process {
     int processId;
     int burstTime;
     int priority;
-    TaskNode next;
+    Process next;
 
-    public TaskNode(int processId, int burstTime, int priority) {
+    public Process(int processId, int burstTime, int priority) {
         this.processId = processId;
         this.burstTime = burstTime;
         this.priority = priority;
